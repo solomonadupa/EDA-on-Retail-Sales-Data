@@ -49,6 +49,7 @@ df["Date"] = pd.to_datetime(df["Date"])
 ```
 **Visualization of the Times series plot**
 
+![1](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/fa49b922-a7c4-475d-a126-4e0a3f1ff054)
 
 ## Time series Analysis by Month
 1. Creating Month and Date Columns
@@ -63,6 +64,7 @@ df['Monthly_sales']= Monthly_sales['Total Amount']
 ```
 **A plot of Total_Monthly Sales Throughout the Year**
 
+![2](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/b6aaafd7-eb7c-4c43-a19f-e71598fc1dac)
 
 ## Age Spending Analysis
 1. Creating Age brackets
@@ -76,12 +78,8 @@ df["Age group"] = pd.cut(df["Age"], bins=age_bins, labels=age_labels, right= Tru
 Total_amount_by_age = df.groupby('Age group')['Total Amount'].sum()
 print(Total_amount_by_age)
 ```
-|Age group|Amount|
-|10-19    |34730 |
-|20-29    |98215 |
-|30-39    |95950 |
-|40-49    |93795 |
-|50+      |100085|
+![3](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/8f61a1ef-c71c-47e0-afea-8ad6eb605d40)
+
 
 3. Total amount spent on each product category by different age brackets
 ```
@@ -89,42 +87,50 @@ Grouped_data = df.groupby(['Age group', 'Product Category'])['Total Amount'].sum
 ```
 **Spending patterns of different Age brackets**
 
-## Gender Soending Analysis
+![4](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/e394367d-62e9-4a75-893f-ffb2148cab83)
+
+## Gender Spending Analysis
 1. Calculating Total amount spent by each Gender
-```Gender_Totalspend = df.groupby('Gender')['Total Amount'].sum().reset_index()
+
+```
+Gender_Totalspend = df.groupby('Gender')['Total Amount'].sum().reset_index()
 print(Gender_Totalspend)
 ```
-   Gender        Total Amount
-0  Female        232840
-1  Male          223160
+
+![5](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/88ee4396-c9ed-426c-96bd-c10b4d0294a2)
 
 2. Product Preference by Gender
-```Gender_preference = df.groupby(['Gender', 'Product Category'])['Total Amount'].sum().reset_index()
+```
+Gender_preference = df.groupby(['Gender', 'Product Category'])['Total Amount'].sum().reset_index()
 ```
 **A plot of Products showing preference by Total amount spent on each by each Gender**
 
+![7](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/2db61249-1be3-4a70-89ac-e65ce2754447)
+
 3.Total_Amount spent by the Average Male vs Female
-```Avg_amount_by_Gender = df.groupby('Gender')['Total Amount'].mean()
+```
+Avg_amount_by_Gender = df.groupby('Gender')['Total Amount'].mean()
 print(Avg_amount_by_Gender)
 ```
-Gender
-Female    456.549020
-Male      455.428571
+
+![8](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/1a7d65e2-5f49-49d8-ac66-f0a123361954)
 
 ## Product Performance Analysis
 1. Total revenue from Each Product Category
-```Total_revenue = df.groupby('Product Category')['Total Amount'].sum().reset_index()
+```
+Total_revenue = df.groupby('Product Category')['Total Amount'].sum().reset_index()
 ```
 **A plot of Total revenue from Each Product**
 
+![9](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/cdab0ee3-11ed-4c82-80a9-3ca08e771172)
+
 2. Total number of each Product sold
-```Total_num = df.groupby('Product Category')['Quantity'].sum().reset_index()
+```
+Total_num = df.groupby('Product Category')['Quantity'].sum().reset_index()
 print(Total_num)
 ```
-Product Category  Quantity
-0      Beauty       771
-1      Clothing     894
-2      Electronics  849
+
+![10](https://github.com/solomonadupa/Time-Series-Analysis/assets/160836596/642cccde-a67d-4c5d-8761-327d309748a9)
 
 ## Recommendations
 1. Create/Strengthen your online presence for age groups that show a higher inclination towards digital channels to improve sales.
